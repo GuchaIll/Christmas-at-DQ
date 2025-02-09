@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5f6b0080ff4ea384399c1210cc64a2dd
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/EventManagement/package.json
+  uploadId: 373895

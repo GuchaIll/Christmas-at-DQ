@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bb2407fc8b4873343be70d8d1278a36c
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Popup/Runtime/FredericRP.Popups.Runtime.asmdef
+  uploadId: 373895

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 302308ff12488ce4da1179a94a71ebe9
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/ObjectPool/Runtime/Prefabs/ObjectPool.prefab
+  uploadId: 373895

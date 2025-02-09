@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8d5b1b76e61252142a2ee57e7512e85e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Transition/Runtime/Events/TransitionShown.asset
+  uploadId: 373895

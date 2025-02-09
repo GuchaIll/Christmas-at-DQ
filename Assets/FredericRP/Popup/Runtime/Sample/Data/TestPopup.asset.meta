@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 246e52708dc2449cfb45f4db80e2819a
+timeCreated: 1491600589
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Popup/Runtime/Sample/Data/TestPopup.asset
+  uploadId: 373895

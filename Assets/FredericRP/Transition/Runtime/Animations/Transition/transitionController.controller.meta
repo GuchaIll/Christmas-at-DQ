@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b5eed7c9f047a6347a178e3b526525f6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Transition/Runtime/Animations/Transition/transitionController.controller
+  uploadId: 373895

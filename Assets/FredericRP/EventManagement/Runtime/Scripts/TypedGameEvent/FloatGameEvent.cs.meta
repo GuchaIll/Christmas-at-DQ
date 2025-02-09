@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5665af3ab7917774db3c16e90a01a4ce
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/EventManagement/Runtime/Scripts/TypedGameEvent/FloatGameEvent.cs
+  uploadId: 373895

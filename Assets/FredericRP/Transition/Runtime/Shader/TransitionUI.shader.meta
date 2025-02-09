@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 863892c746776a2448e5ed7c656bc4ee
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Transition/Runtime/Shader/TransitionUI.shader
+  uploadId: 373895

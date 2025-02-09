@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: fbbfb5a8bebd6414f8657bc967f07405
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Transition/Runtime/FredericRP.Transition.Runtime.asmdef
+  uploadId: 373895

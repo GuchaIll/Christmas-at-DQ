@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 07bf3541bc9896742a88865c02715bc7
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/AssetBundleTool/Runtime/FredericRP.AssetBundleTool.Runtime.asmdef
+  uploadId: 373895

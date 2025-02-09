@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 82f33399e671fda48b2d843d35c111c5
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Tips/Runtime/Scripts/DisplayTips.cs
+  uploadId: 373895

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0daec0ec6cfb8794face06de60ff2ab0
+timeCreated: 1499068548
+licenseType: Store
+TextScriptImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/BucketGenerator/README.md
+  uploadId: 373895

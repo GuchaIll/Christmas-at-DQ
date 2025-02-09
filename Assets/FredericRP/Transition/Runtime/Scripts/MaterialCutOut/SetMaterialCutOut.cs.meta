@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 67f22ebe409ba2b48bbe198143c34e5c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Transition/Runtime/Scripts/MaterialCutOut/SetMaterialCutOut.cs
+  uploadId: 373895

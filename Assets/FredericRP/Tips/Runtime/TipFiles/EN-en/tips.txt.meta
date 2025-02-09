@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6d4a0b8a2b64f9a4f947e156f7f0adf5
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: fredericrp/tips
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Tips/Runtime/TipFiles/EN-en/tips.txt
+  uploadId: 373895

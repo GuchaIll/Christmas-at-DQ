@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 37aa551df61334d299dee8e96f4face4
+timeCreated: 1491510190
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Popup/Runtime/Scripts/PopupBase.cs
+  uploadId: 373895

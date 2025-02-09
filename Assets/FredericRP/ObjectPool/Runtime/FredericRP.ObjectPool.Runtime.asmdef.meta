@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0c7df74e17f80f346b5568bdbbce58c1
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/ObjectPool/Runtime/FredericRP.ObjectPool.Runtime.asmdef
+  uploadId: 373895

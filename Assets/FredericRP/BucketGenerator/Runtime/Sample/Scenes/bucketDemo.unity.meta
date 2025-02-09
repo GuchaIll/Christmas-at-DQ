@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: aa9238f19c6468e44b3a639d81bee32c
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/BucketGenerator/Runtime/Sample/Scenes/bucketDemo.unity
+  uploadId: 373895

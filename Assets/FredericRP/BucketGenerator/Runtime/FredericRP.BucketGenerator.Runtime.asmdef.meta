@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2e7d8c1fe27ecb246a7b04c9a58f4048
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/BucketGenerator/Runtime/FredericRP.BucketGenerator.Runtime.asmdef
+  uploadId: 373895

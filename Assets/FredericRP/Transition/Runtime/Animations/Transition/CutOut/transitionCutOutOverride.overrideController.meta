@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4db80c3ba6fd2e14d923ca67ac3448e9
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 22100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Transition/Runtime/Animations/Transition/CutOut/transitionCutOutOverride.overrideController
+  uploadId: 373895

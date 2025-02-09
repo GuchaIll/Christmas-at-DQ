@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c62825f41f5bce747870ff0707ccd49f
+AssemblyDefinitionImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 156803
+  packageName: FredericRP Standard Assets
+  packageVersion: 1.3.0
+  assetPath: Assets/FredericRP/Tips/Runtime/FredericRP.Tips.Runtime.asmdef
+  uploadId: 373895
