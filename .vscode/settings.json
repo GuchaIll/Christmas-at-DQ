@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Christmas-at-DQ.sln"
+    "dotnet.defaultSolution": "Christmas at DQ.sln"
 }
