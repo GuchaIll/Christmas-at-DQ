@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-   
-   [SerializeField, Range(0, 100)] private float defaultVelocity = 5f;
+    
+    [SerializeField, Range(0, 100)] private float defaultVelocity = 5f;
     [SerializeField, Range(0, 100)] private float maxAcceleration = 10f;
     [SerializeField, Range(0, 100)] private float maxSpeed = 10f;
 
