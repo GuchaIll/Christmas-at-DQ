@@ -8,7 +8,7 @@ public class PostProcessingRenderer : MonoBehaviour {
     private void Start()
     {
         Camera cam = GetComponent<Camera>();
-        cam.depthTextureMode = cam.depthTextureMode | DepthTextureMode.Depth;
+        cam.depthTextureMode = cam.depthTextureMode | DepthTextureMode.Depth | DepthTextureMode.DepthNormals;
     }
 
     void OnRenderImage(RenderTexture source, RenderTexture destination)
