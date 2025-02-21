@@ -56,7 +56,7 @@ public class CarController : MonoBehaviour
             }
         }
         else {
-            flat_velocity.y = flat_velocity.y - (flat_velocity.y - )
+            
         }
     }
 }
