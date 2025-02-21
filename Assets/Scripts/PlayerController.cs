@@ -63,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
         if (Mathf.Abs(wheelTurn) > wheelTurnToTurnThreshhold)
             desiredVelocity.x = Mathf.Sign(wheelTurn) * 
-                1.2f * (Mathf.Abs(wheelTurn) - wheelTurnToTurnThreshhold) / (maxWheelTurn - wheelTurnToTurnThreshhold);
+                1.5f * (Mathf.Abs(wheelTurn) - wheelTurnToTurnThreshhold) / (maxWheelTurn - wheelTurnToTurnThreshhold);
 
         desiredVelocity = desiredVelocity.normalized * maxSpeed;
 
