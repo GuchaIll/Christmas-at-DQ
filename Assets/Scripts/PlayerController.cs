@@ -1,5 +1,6 @@
 using System;
 using Unity.Cinemachine;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -33,6 +34,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody body;
     private CapsuleCollider capsuleCollider;
     private CinemachineCamera virtualCamera;
+
+
 
     void Awake()
     {
@@ -78,6 +81,10 @@ public class PlayerController : MonoBehaviour
                 wheelTurn = 0.0f;
         }
 
+        Vector3 mDelta = Input.mousePositionDelta;
+
+
+        Debug.Log("MP: " + mDelta);
         Debug.Log("Turn: " + wheelTurn);
         
         if (virtualCamera != null)
@@ -85,7 +92,9 @@ public class PlayerController : MonoBehaviour
             float targetRollAngle = playerInput.x * rollAngle;
             float currentRollAngle = transform.localEulerAngles.z;
             float newRollAngle = Mathf.MoveTowardsAngle(currentRollAngle, targetRollAngle, rollSpeed * Time.deltaTime);
-            Quaternion targetRotation = Quaternion.Euler(0, 0, newRollAngle);
+
+            float yawAngle = wheelTurn * 0.6f;
+            Quaternion targetRotation = Quaternion.Euler(0, yawAngle, newRollAngle);
             transform.localRotation = targetRotation;
         }
     }
