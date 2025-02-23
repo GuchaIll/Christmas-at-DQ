@@ -3,6 +3,7 @@ Shader "LimboPostProcessing"{
     Properties{
         [HideInInspector]_MainTex ("Texture", 2D) = "white" {}
         _Color ("Color", Color) = (1,1,1,1)
+        _CustomDepthTex ("Custom Depth Texture", 2D) = "white" {}
     }
 
     SubShader{
