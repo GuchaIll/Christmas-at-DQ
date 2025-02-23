@@ -10,7 +10,7 @@ public class KarmaUpdate : MonoBehaviour
     void Start()
     {
         //karmaText = GetComponent<TextMeshPro>();
-        Debug.Log(karmaText.text);
+        // Debug.Log(karmaText.text);
     }
 
     // Update is called once per frame
@@ -25,6 +25,6 @@ public class KarmaUpdate : MonoBehaviour
             num--;
         }
         karmaText.text = "KARMA: " + num.ToString();
-        // Debug.Log("Karma is now " + num);
+        Debug.Log("Karma is now " + num);
     }
 }
