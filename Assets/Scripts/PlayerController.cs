@@ -52,7 +52,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        
+        Quaternion rotation = Quaternion.Euler(0, 0, 0);
+        virtualCamera.transform.rotation = rotation;
     }
 
     // Update is called once per frame
@@ -81,21 +82,25 @@ public class PlayerController : MonoBehaviour
                 wheelTurn = 0.0f;
         }
 
-        Vector3 mDelta = Input.mousePositionDelta;
-
-
-        Debug.Log("MP: " + mDelta);
-        Debug.Log("Turn: " + wheelTurn);
         
+
+        float yaw = wheelTurn * 0.6f;
+        Quaternion targetRotation = Quaternion.Euler(0, yaw, 0);
+        transform.localRotation = targetRotation;
+
+
         if (virtualCamera != null)
         {
-            float targetRollAngle = playerInput.x * rollAngle;
-            float currentRollAngle = transform.localEulerAngles.z;
-            float newRollAngle = Mathf.MoveTowardsAngle(currentRollAngle, targetRollAngle, rollSpeed * Time.deltaTime);
+            Vector3 mPosNormal = Input.mousePosition / new Vector2(Screen.width, Screen.height);
 
-            float yawAngle = wheelTurn * 0.6f;
-            Quaternion targetRotation = Quaternion.Euler(0, yawAngle, newRollAngle);
-            transform.localRotation = targetRotation;
+            Debug.Log("MP: " + mPosNormal);
+            Debug.Log("Turn: " + wheelTurn);
+
+            float glanceYaw = Mathf.Clamp(mPosNormal.x * 90, -82, 82);
+            float glancePitch = Mathf.Clamp(-mPosNormal.y * 90, -20, 0);
+
+            Quaternion rotation = Quaternion.Euler(glancePitch, glanceYaw, 0);
+            virtualCamera.transform.rotation = rotation;
         }
     }
 
