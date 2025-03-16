@@ -82,8 +82,6 @@ public class PlayerController : MonoBehaviour
                 wheelTurn = 0.0f;
         }
 
-        
-
         float yaw = wheelTurn * 0.6f;
         Quaternion targetRotation = Quaternion.Euler(0, yaw, 0);
         transform.localRotation = targetRotation;
@@ -99,7 +97,7 @@ public class PlayerController : MonoBehaviour
             float glanceYaw = Mathf.Clamp(mPosNormal.x * 90, -82, 82);
             float glancePitch = Mathf.Clamp(-mPosNormal.y * 90, -20, 0);
 
-            Quaternion rotation = Quaternion.Euler(glancePitch, glanceYaw, 0);
+            Quaternion rotation = Quaternion.Euler(glancePitch, glanceYaw + yaw, 0);
             virtualCamera.transform.rotation = rotation;
         }
     }
