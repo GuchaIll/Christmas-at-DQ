@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
                 wheelTurn = 0.0f;
         }
 
-        float yaw = wheelTurn * 0.6f;
+        float yaw = Mathf.MoveTowardsAngle(transform.eulerAngles.y, wheelTurn * 0.6f, 70);
         Quaternion targetRotation = Quaternion.Euler(0, yaw, 0);
         transform.localRotation = targetRotation;
 
