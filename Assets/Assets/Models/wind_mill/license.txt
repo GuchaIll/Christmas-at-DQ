@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wind mill
+* source:	https://sketchfab.com/3d-models/wind-mill-1b8f46db99b9415bb585f9d8cd9bbf7a
+* author:	ScanMe (https://sketchfab.com/ScanMe)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wind mill" (https://sketchfab.com/3d-models/wind-mill-1b8f46db99b9415bb585f9d8cd9bbf7a) by ScanMe (https://sketchfab.com/ScanMe) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)

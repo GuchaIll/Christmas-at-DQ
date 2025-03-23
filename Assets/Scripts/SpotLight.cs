@@ -12,7 +12,7 @@ public class SpotLight : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
             if (spotLight.enabled) {
                 highBeam.enabled = !highBeam.enabled;

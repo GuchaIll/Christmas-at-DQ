@@ -31,17 +31,22 @@ public class StopLight : MonoBehaviour{
     {
         while(true)
         {
-            currentState = StopLightState.Red;
-            Debug.Log("Red Light");
-            yield return new WaitForSeconds(redLightDuration);
+           switch(currentState)
+           {
+                case StopLightState.Red:
+                    yield return new WaitForSeconds(redLightDuration);
+                    currentState = StopLightState.Green;
+                    break;
+                case StopLightState.Yellow:
+                    yield return new WaitForSeconds(yellowLightDuration);
+                    currentState = StopLightState.Red;
+                    break;
+                case StopLightState.Green:
+                    yield return new WaitForSeconds(greenLightDuration);
+                    currentState = StopLightState.Yellow;
+                    break;
+           }
 
-            currentState = StopLightState.Green;
-            Debug.Log("Green Light");
-            yield return new WaitForSeconds(greenLightDuration);
-
-            currentState = StopLightState.Yellow;
-            Debug.Log("Yellow Light");
-            yield return new WaitForSeconds(yellowLightDuration);
         }
     }
 
@@ -64,6 +69,11 @@ public class StopLight : MonoBehaviour{
                 StopCoroutine(stopLightCoroutine);
                 stopLightCoroutine = null;
 
+            }
+
+            if(currentState == StopLightState.Red)
+            {
+                Debug.Log("Player ran a red light");
             }
     }
     }

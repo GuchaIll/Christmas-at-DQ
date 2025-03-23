@@ -2,7 +2,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public enum State
+public enum WIFState
 {
     Passive, 
     Angry,
@@ -11,7 +11,7 @@ public enum State
 }
 public class WomanInTheFogAI : MonoBehaviour, InteractionInterface, LineofSightInterface
 {
-    public State currentState = State.Passive;
+    public WIFState currentState = WIFState.Passive;
     [SerializeField] private string[] RoadDialogueLines;
     [SerializeField] private string[] AngryDialogueLines;
     [SerializeField] private string[] CarDialogueLines;
@@ -45,23 +45,22 @@ public class WomanInTheFogAI : MonoBehaviour, InteractionInterface, LineofSightI
             audioSource.clip = PassiveAudioClip;
             audioSource.loop = true;
         }
-        
-
+    
     }
     void Update()
     {
         switch(currentState)
         {
-            case State.Passive:
+            case WIFState.Passive:
                 PassiveState();
                 break;
-            case State.Angry:
+            case WIFState.Angry:
                 AngryState();
                 break;
-            case State.Crying:
+            case WIFState.Crying:
                 CryingState();
                 break;
-            case State.Inverted:
+            case WIFState.Inverted:
                 InvertedState();
                 break;
             
@@ -79,16 +78,16 @@ public class WomanInTheFogAI : MonoBehaviour, InteractionInterface, LineofSightI
         isInteracting = true;
        switch(currentState)
        {
-            case State.Passive:
+            case WIFState.Passive:
                 dialogueSystem.InitiateNewDialogue(characterName, RoadDialogueLines);
                 break;
-            case State.Angry:
+            case WIFState.Angry:
                 dialogueSystem.InitiateNewDialogue(characterName, AngryDialogueLines);
                 break;
-            case State.Crying:
+            case WIFState.Crying:
                 dialogueSystem.InitiateNewDialogue(characterName, CarDialogueLines);
                 break;
-            case State.Inverted:
+            case WIFState.Inverted:
                 dialogueSystem.InitiateNewDialogue(characterName, InvertedDialogueLines);
                 break;
                 
@@ -100,21 +99,21 @@ public class WomanInTheFogAI : MonoBehaviour, InteractionInterface, LineofSightI
     public void OnLineOfSightEnter()
     {
         Debug.Log("Line of Sight Enter");
-        if(currentState != State.Inverted)
+        if(currentState != WIFState.Inverted)
         {
             return;
         }
         sightedTimer += Time.deltaTime;
         if(sightedTimer >= sightedTimerMax)
         {
-            currentState = State.Inverted;
+            currentState = WIFState.Inverted;
         }
     }
 
     public void OnLineOfSightExit()
     {
         Debug.Log("Line of Sight Exit");
-        if(currentState == State.Angry)
+        if(currentState == WIFState.Angry)
         {
             return;
         }

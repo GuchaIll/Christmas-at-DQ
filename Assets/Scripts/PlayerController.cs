@@ -24,14 +24,15 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody body;
     private CapsuleCollider capsuleCollider;
-    private CinemachineCamera virtualCamera;
+    [SerializeField] private CinemachineCamera virtualCamera;
+
+    private bool visibility;
 
     void Awake()
     {
         body  = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
-        virtualCamera = FindFirstObjectByType<CinemachineCamera>();
-
+      
         if(virtualCamera == null)
         {
             Debug.LogWarning("No virtual camera found");
@@ -105,5 +106,27 @@ public class PlayerController : MonoBehaviour
             }
         }
         
+    }
+    public bool getVisibility()
+    {
+        return visibility;
+    }
+
+    public void setVisibility(bool value)
+    {
+        visibility = value;
+    }
+
+    public void toggleParkMode(bool park)
+    {
+        if(park)
+        {
+            body.linearVelocity = Vector3.zero;
+            defaultVelocity = 0;
+        }
+        else{
+            defaultVelocity = 5f;
+        }
+
     }
 }
