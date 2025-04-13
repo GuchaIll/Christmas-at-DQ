@@ -34,6 +34,7 @@ public class CutSceneManager : MonoBehaviour
     [SerializeField] private bool playOnStart = false;
     [SerializeField] private bool loop = false;
     [SerializeField] private bool allowSkip = true;
+    private float skipTimer = 0;
 
     [SerializeField] private PlayerController playerController;
     [SerializeField] private GameObject SceneAudio;
@@ -97,6 +98,23 @@ public class CutSceneManager : MonoBehaviour
         if (allowSkip)
         {
             currentFrame = cutScenes[currentCutSceneIndex].frames.Length;
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetAxis("Skip Cutscene") > 0.5f)
+        {
+            skipTimer += Time.deltaTime;
+            if (skipTimer >= 4.0f)
+            {
+                Debug.Log("Skipped Cutscene.");
+                SkipCutScene();
+                skipTimer = 0;
+            }
+        } else
+        {
+            skipTimer = 0;
         }
     }
 
