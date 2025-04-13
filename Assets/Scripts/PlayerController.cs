@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField, Range(0, 20)] private float rollSpeed = 10f;
 
     [SerializeField, Range(0, 100f)] private float driftSpeed = 15f;
-    private Vector3 velocity, desiredVelocity;
+    public Vector3 velocity, desiredVelocity;
 
     bool onGround;
 
