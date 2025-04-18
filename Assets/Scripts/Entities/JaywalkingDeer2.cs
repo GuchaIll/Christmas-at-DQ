@@ -1,6 +1,7 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class JaywalkingDeer2 : MonoBehaviour
 {
@@ -13,11 +14,13 @@ public class JaywalkingDeer2 : MonoBehaviour
     };
 
     public Mode mode = Mode.Waiting;
-    Vector3 velocity = Vector3.zero;
+    private Vector3 velocity = Vector3.zero;
+    private float delayTimer = 0.0f;
 
-    [SerializeField] private float scareTime = 1.6f; // If the player is moving faster, the deer should be triggered farther away.
-    [SerializeField] private float scareDistance = 10f; // Distance at which the deer gets triggered
+    [SerializeField] private float triggerTime = 1.6f; // If the player is moving faster, the deer should be triggered farther away.
+    [SerializeField] private float triggerDistance = 27f; // Distance at which the deer gets triggered
     [SerializeField] private float freezeDistance = 10f; // Distance from the path of the player at which the deer freezes.
+    [SerializeField] private float retreatDelay = 3.65f; // Distance from the path of the player at which the deer freezes.
     [SerializeField] private float runSpeed = 10f; // Speed at which the deer runs
     [SerializeField] private Transform runDirection; // Target position for the deer to run to
     [SerializeField] private AudioClip scareSound; // Optional sound for the jump scare
@@ -45,7 +48,7 @@ public class JaywalkingDeer2 : MonoBehaviour
         float s = 0.5f * (dist1 + dist2 + dist3);
         float deer_dist_from_traffic = 2.0f * math.sqrt(s * (s - dist1) * (s - dist2) * (s - dist3)) / dist3;
 
-        return 0f <= t && t <= 1f && 0f <= u && u <= 0.5f && deer_dist_from_traffic <= freezeDistance;
+        return 0f <= t && t <= 1f && -0.2f <= u && u <= 1.2f && deer_dist_from_traffic <= freezeDistance;
     }
 
     // Update is called once per frame
@@ -53,18 +56,19 @@ public class JaywalkingDeer2 : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        Vector3 projected_position = player.transform.position + player.GetComponent<PlayerController>().velocity * scareTime;
+        Vector3 projected_position = player.transform.position + player.GetComponent<PlayerController>().velocity * (2f + triggerTime);
 
         Mode init_mode = mode;
 
         if (mode == Mode.Retreating || mode == Mode.Dashing)
         {
-            velocity = (runDirection.position - transform.position).normalized * runSpeed * (mode == Mode.Retreating ? 1.15f : 1.0f);
+            var v = new Vector2(runDirection.position.x - transform.position.x, runDirection.position.z - transform.position.z).normalized;
+            velocity = runSpeed * (new Vector3(v.x, 0f, v.y));
         }
 
         if (mode == Mode.Waiting)
         {
-            if ((projected_position - transform.position).magnitude <= scareDistance)
+            if ((projected_position - transform.position).magnitude <= triggerDistance)
             {
                 mode = Mode.Dashing;
             }
@@ -80,12 +84,19 @@ public class JaywalkingDeer2 : MonoBehaviour
         else if (mode == Mode.Frozen) {
             velocity = Vector3.zero;
             if (player.GetComponent<PlayerController>().velocity.magnitude < 0.5f) {
-                mode = Mode.Retreating;
+                if (delayTimer > retreatDelay) {
+                    mode = Mode.Retreating;
+                }
+                delayTimer += Time.deltaTime;
+            } 
+            else
+            {
+                delayTimer = 0f;
             }
         }
         else if (mode == Mode.Retreating)
         {
-            transform.position += velocity * Time.deltaTime;
+            transform.position += 1.15f * velocity * Time.deltaTime;
         }
 
         if (mode != init_mode)
