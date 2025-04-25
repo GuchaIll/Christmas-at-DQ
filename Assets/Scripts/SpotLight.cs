@@ -17,4 +17,9 @@ public class SpotLight : MonoBehaviour
             spotLight.enabled = !spotLight.enabled; 
         }
     }
+
+    public bool IsSpotLightOn()
+    {
+        return spotLight.enabled;
+    }
 }

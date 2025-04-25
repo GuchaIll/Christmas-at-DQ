@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour {
 
+   [SerializeField] private GameObject book; // Reference to the player GameObject
     public float rotationSpeed = 100f; // Speed of rotation
     public float maxPitch = 60f; // Maximum pitch angle
     public float minPitch = -60f; // Minimum pitch angle
@@ -14,11 +15,30 @@ public class CameraRotation : MonoBehaviour {
     private float currentPitch; // Current pitch (used for damping)
     private float currentYaw; // Current yaw (used for damping)
 
+    private bool isRotationEnabled = true; // Flag to check if camera rotation is enabled
+
+    public void enableCameraRotation()
+    {
+        // Enable camera rotation
+        isRotationEnabled = true;
+    }
+
+    public void disableCameraRotation()
+    {
+        // Disable camera rotation
+        isRotationEnabled = false;
+    }
+
     void Update()
     {
         // Get input for horizontal and vertical rotation
-
-        if(Input.GetMouseButton(0))
+        if (book != null && book.activeSelf)
+        {
+            // If the book is active, do not allow camera rotation
+            return;
+        }
+        
+        if(isRotationEnabled &&Input.GetMouseButton(0))
         {
            
         

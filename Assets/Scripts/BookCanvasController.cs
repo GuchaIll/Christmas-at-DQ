@@ -8,7 +8,16 @@ public class BookCanvasController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
+
             book.SetActive(false);
+
+             CameraRotation cameraController = FindFirstObjectByType<CameraRotation>();
+
+            if (cameraController != null)
+            {
+                cameraController.enableCameraRotation();
+        }
+
         }
     }
 }

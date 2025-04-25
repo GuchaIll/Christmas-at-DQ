@@ -11,8 +11,8 @@ public enum CutSceneNames
     TurbulentShore,
     Wolfur
     
-
 }
+
 
 [System.Serializable]
 public class CutScene
@@ -25,7 +25,7 @@ public class CutSceneManager : MonoBehaviour
 {
     [SerializeField] private Image cutSceneImage;
     [SerializeField] private CutScene[] cutScenes; // Array of cutscenes
-    [SerializeField] private float cutSceneDuration = 3f;
+    [SerializeField] private float cutSceneDuration = 2f;
 
     private int currentCutSceneIndex = 0;
     private int currentFrame = 0;
@@ -46,6 +46,15 @@ public class CutSceneManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        // Check for mouse click to skip to the next scene
+        if (isPlaying && allowSkip && Input.GetMouseButtonDown(0))
+        {
+           // SkipCutScene();
+        }
+    }
+
     private IEnumerator PlayCutSceneRoutine()
     {
         isPlaying = true;
@@ -57,11 +66,28 @@ public class CutSceneManager : MonoBehaviour
         Sprite[] frames = cutScenes[currentCutSceneIndex].frames;
 
         while (currentFrame < frames.Length)
+       {
+         cutSceneImage.sprite = frames[currentFrame];
+         float timer = 0f;
+
+        // Wait for the duration of the frame or until the player clicks
+         while (timer < cutSceneDuration)
         {
-            cutSceneImage.sprite = frames[currentFrame];
-            yield return new WaitForSeconds(cutSceneDuration);
-            currentFrame++;
+            if (allowSkip && Input.GetMouseButtonDown(0) && currentFrame < frames.Length - 1)
+    
+            {
+                // Skip to the next cutscene
+                currentFrame++;
+                cutSceneImage.sprite = frames[currentFrame];
+                break;
+            }
+
+            timer += Time.deltaTime;
+            yield return null;
         }
+
+         currentFrame++;
+       }
 
         isPlaying = false;
         if (loop)
@@ -73,32 +99,38 @@ public class CutSceneManager : MonoBehaviour
         {
             ExitCutScene();
             cutSceneImage.gameObject.SetActive(false);
-            //Cursor.visible = false;
-
         }
     }
 
     public void PlayCutScene()
     {
-       
         if (!isPlaying)
         {
-             if(playerController != null)
+            if (playerController != null)
             {
                 playerController.toggleParkMode(true);
             }
-        
+
             StartCoroutine(PlayCutSceneRoutine());
         }
     }
 
-    public void SkipCutScene()
-    {
-        if (allowSkip)
-        {
-            currentFrame = cutScenes[currentCutSceneIndex].frames.Length;
-        }
-    }
+    //public void SkipCutScene()
+    //{
+        //if (allowSkip)
+       // {
+       //     // Skip to the next cutscene
+           // currentFrame = cutScenes[currentCutSceneIndex].frames.Length;
+
+            // If there are more cutscenes, move to the next one
+         //   if (currentCutSceneIndex < cutScenes.Length - 1)
+        //    {
+         //       currentCutSceneIndex++;
+              
+       //     }
+          
+       // }
+    //}
 
     public void SetCutScene(CutSceneNames cutSceneName)
     {
@@ -120,15 +152,14 @@ public class CutSceneManager : MonoBehaviour
         {
             playerController.toggleParkMode(false);
             SceneAudio.GetComponent<AudioSource>().Play();
-            if(cutSceneImage.canvas)
+            if (cutSceneImage.canvas)
             {
                 AudioSource currAudio = cutSceneImage.canvas.GetComponent<AudioSource>();
-                if(currAudio != null)
+                if (currAudio != null)
                 {
                     currAudio.Stop();
                 }
             }
-           
         }
     }
 }

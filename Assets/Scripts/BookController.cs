@@ -19,7 +19,19 @@ public class BookController : MonoBehaviour
         if(book != null)
         {
             Debug.Log("Book is active");
+
             book.SetActive(!book.activeSelf);
+        }
+
+        CameraRotation cameraController = FindFirstObjectByType<CameraRotation>();
+
+        if (cameraController != null)
+            {
+                cameraController.disableCameraRotation();
+                Debug.Log("Camera rotation disabled");
+        }
+        else{
+            Debug.LogWarning("CameraRotation component not found in the scene.");
         }
     }
 

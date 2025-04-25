@@ -17,4 +17,9 @@ public class CarHonk : MonoBehaviour
             honkSound.Play();
         }
     }
+
+    public bool IsHonkSoundPlaying()
+    {
+        return honkSound.isPlaying;
+    }
 }
