@@ -133,22 +133,7 @@ public class CutSceneManager : MonoBehaviour
        // }
     //}
 
-    public void Update()
-    {
-        if (Input.GetAxis("Skip Cutscene") > 0.5f)
-        {
-            skipTimer += Time.deltaTime;
-            if (skipTimer >= 4.0f)
-            {
-                Debug.Log("Skipped Cutscene.");
-                SkipCutScene();
-                skipTimer = 0;
-            }
-        } else
-        {
-            skipTimer = 0;
-        }
-    }
+  
 
     public void SetCutScene(CutSceneNames cutSceneName)
     {
